@@ -1,23 +1,19 @@
 import React from "react";
 
-type ScenarioSelectorProps = {
-  selected: string;
-  onChange: (scenario: string) => void;
+export type ScenarioSelectorProps = {
+  selectedScenario: string;
+  onChange: React.Dispatch<React.SetStateAction<string>>;
 };
 
-const scenarios = ["Calm Waters", "Storm", "Power Failure"];
-
-export default function ScenarioSelector({ selected, onChange }: ScenarioSelectorProps) {
+export default function ScenarioSelector({ selectedScenario, onChange }: ScenarioSelectorProps) {
   return (
-    <div>
-      <h2>Kies een scenario:</h2>
-      <select value={selected} onChange={e => onChange(e.target.value)}>
-        {scenarios.map((scenario) => (
-          <option key={scenario} value={scenario}>
-            {scenario}
-          </option>
-        ))}
-      </select>
-    </div>
+    <select
+      value={selectedScenario}
+      onChange={(e) => onChange(e.target.value)}
+    >
+      <option value="scenario1">Scenario 1</option>
+      <option value="scenario2">Scenario 2</option>
+      {/* Voeg meer scenario's toe */}
+    </select>
   );
 }
