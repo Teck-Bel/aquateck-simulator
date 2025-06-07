@@ -11,22 +11,22 @@ interface TempLimits {
 
 // Basis starttemperatuur en grenzen per regio & seizoen
 const regionSeasonTemps: Record<Region, Record<Season, TempLimits>> = {
-  "Noordzee": {
-    "Lente": { min: 6, max: 14, start: 10 },
-    "Zomer": { min: 14, max: 20, start: 17 },
-    "Herfst": { min: 10, max: 16, start: 13 },
+  "North Sea": {
+    "Spring": { min: 6, max: 14, start: 10 },
+    "Summer": { min: 14, max: 20, start: 17 },
+    "Autumn": { min: 10, max: 16, start: 13 },
     "Winter": { min: 2, max: 8, start: 5 },
   },
-  "Middellandse Zee": {
-    "Lente": { min: 13, max: 19, start: 16 },
-    "Zomer": { min: 20, max: 26, start: 23 },
-    "Herfst": { min: 17, max: 23, start: 20 },
+  "Mediterranean Sea": {
+    "Spring": { min: 13, max: 19, start: 16 },
+    "Summer": { min: 20, max: 26, start: 23 },
+    "Autumn": { min: 17, max: 23, start: 20 },
     "Winter": { min: 11, max: 17, start: 14 },
   },
-  "Tropisch": {
-    "Lente": { min: 26, max: 30, start: 28 },
-    "Zomer": { min: 27, max: 31, start: 29 },
-    "Herfst": { min: 26, max: 30, start: 28 },
+  "Tropical Sea": {
+    "Spring": { min: 26, max: 30, start: 28 },
+    "Summer": { min: 27, max: 31, start: 29 },
+    "Autumn": { min: 26, max: 30, start: 28 },
     "Winter": { min: 25, max: 29, start: 27 },
   }
 };
