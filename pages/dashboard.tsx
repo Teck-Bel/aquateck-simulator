@@ -16,21 +16,23 @@ export default function Dashboard() {
   const [selectedScenario, setSelectedScenario] = useState("Calm Waters");
   const [selectedRegion, setSelectedRegion] = useState<Region>("North Sea");
   const [selectedSeason, setSelectedSeason] = useState<Season>("Summer");
+  const [windSpeed, setWindSpeed] = useState(0);
+  const [windDirection, setWindDirection] = useState("N");
 
   useEffect(() => {
     const interval = setInterval(() => {
+      const result = generateData(selectedScenario, selectedRegion, selectedSeason);
+      const nextTime = new Date().toLocalTimeString();
+      
       setData((oldData) => {
-        const nextValue = generateData(selectedScenario, selectedRegion, selectedSeason);
-        const nextTime = new Date().toLocaleTimeString();
-        const newData = [...oldData, { time: nextTime, value: nextValue }];
+      const newData = [...oldData, { time: nextTime, value: result.temperature }];
+      if (newData.length > 20) newData.shift();
+      return newData;
+    });
 
-        // Houd alleen de laatste 20 meetwaarden
-        if (newData.length > 20) {
-          newData.shift();
-        }
-        return newData;
-      });
-    }, 1000);
+    setWindSpeed(result.windSpeed);
+    setWindDirection(result.windDirection);
+  }, 1000);
 
     return () => clearInterval(interval);
   }, [selectedScenario, selectedRegion, selectedSeason]);
@@ -59,6 +61,8 @@ export default function Dashboard() {
         data={data}
         xAxisLabel="Time (hh:mm:ss)"
         yAxisLabel="Temperature"
+        windSpeed={windSpeed}
+        windDirection={windDirection}
       />
     </>
   );
