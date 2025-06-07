@@ -59,7 +59,7 @@ export default function Dashboard() {
       <label style={{ marginLeft:"1rem" }}>
         Seaons
         <select
-          value=(selectedSeason}
+          value={selectedSeason}
         onChange={(e) => setSelectedSeasons(e.target.value as Season)}
         >
         {Season.map((s) => (
