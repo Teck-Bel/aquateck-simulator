@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import SensorChart from "../components/SensorChart";
 import ScenarioSelector from "../components/ScenarioSelector";
+import RegionSelector from "../componets/RegionSelector";
 import { generateData } from "../utils/simulationEngine";
 
 const regions = ["North Sea", "Mediterranean Sea", "Tropical Sea"] as const;
@@ -41,6 +42,10 @@ export default function Dashboard() {
         selectedScenario={selectedScenario}
         onChange={setSelectedScenario}
       />
+      <RegionSelector
+        selectedRegion={selectedRegion}
+        onChange={setSelectedRegion}
+      /> 
 
       <SensorChart
         title="Water Temperature"
@@ -50,20 +55,6 @@ export default function Dashboard() {
         xAxisLabel="Time (hh:mm:ss)"
         yAxisLabel="Temperature"
       />
-
-      <label>
-        Region:
-        <select
-          value={selectedRegion}
-          onChange={(e) => setSelectedRegion(e.target.value as Region)}
-        >
-          {regions.map((r) => (
-            <option key={r} value={r}>
-              {r}
-            </option>
-          ))}
-        </select>
-      </label>
 
       <label style={{ marginLeft: "1rem" }}>
         Seasons
