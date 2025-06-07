@@ -43,13 +43,13 @@ export default function Dashboard() {
       />
 
       <SensorChartAdd commentMore actions
-  title="Water Temperature"
-  unit="°C"
-  currentValue={data.length > 0 ? data[data.length - 1].value : 0}
-  data={data}
-  xAxisLabel="Time (hh:mm:ss)"
-  yAxisLabel="Temperature"
-/>
+        title="Water Temperature"
+        unit="°C"
+        currentValue={data.length > 0 ? data[data.length - 1].value : 0}
+        data={data}
+        xAxisLabel="Time (hh:mm:ss)"
+        yAxisLabel="Temperature"
+      />
 
       <label>
         Region:
@@ -78,8 +78,6 @@ export default function Dashboard() {
           ))}
         </select>
       </label>
-
-      <SensorChart data={data} />
     </>
   );
 }
