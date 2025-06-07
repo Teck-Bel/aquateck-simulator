@@ -71,8 +71,9 @@ export default function Dashboard() {
   backgroundColor: "#f9f9f9",
   border: "1px solid #ddd",
   borderRadius: "8px",
-  maxWidth: "400px"
+  maxWidth: "250px"
 }}>
+  <h2>Wind information</h2>
   <div>
     <strong>Wind Speed:</strong>
     <div>{windSpeed} km/h</div>
