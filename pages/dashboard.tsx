@@ -46,6 +46,10 @@ export default function Dashboard() {
         selectedRegion={selectedRegion}
         onChange={setSelectedRegion}
       /> 
+      <SeasonSelector
+        selectedSeason={selectedSeason}
+        onChange={setSelectedSeason}
+      /> 
 
       <SensorChart
         title="Water Temperature"
@@ -55,20 +59,6 @@ export default function Dashboard() {
         xAxisLabel="Time (hh:mm:ss)"
         yAxisLabel="Temperature"
       />
-
-      <label style={{ marginLeft: "1rem" }}>
-        Seasons
-        <select
-          value={selectedSeason}
-          onChange={(e) => setSelectedSeason(e.target.value as Season)}
-        >
-          {seasons.map((s) => (
-            <option key={s} value={s}>
-              {s}
-            </option>
-          ))}
-        </select>
-      </label>
     </>
   );
 }
