@@ -73,9 +73,9 @@ export function generateData(scenario: string, region: Region, season: Season) {
     : Math.floor(Math.random() * 20) +5; // 5 -25 km/h anders
 
   const directions = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"];
-  const windDirection = directions[Math.floor(Math.random() * directions/length)];
+  const windDirection = directions[Math.floor(Math.random() * directions.length)];
 
-  return Number{
+  return{
     temperature,
     windSpeed,
     windDirection,
