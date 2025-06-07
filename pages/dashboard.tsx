@@ -3,8 +3,8 @@ import SensorChart from "../components/SensorChart";
 import ScenarioSelector from "../components/ScenarioSelector";
 import { generateData } from "../utils/simulationEngine";
 
-const regions=["North Sea", "Mediterranean Sea", "Tropical Sea"] as const;
-const seasons=["Spring", "Summer", "Autumn", "Winter"] as const;
+const regions = ["North Sea", "Mediterranean Sea", "Tropical Sea"] as const;
+const seasons = ["Spring", "Summer", "Autumn", "Winter"] as const;
 
 type Region = typeof regions[number];
 type Season = typeof seasons[number];
@@ -13,7 +13,7 @@ export default function Dashboard() {
   const [data, setData] = useState<{ time: string; value: number }[]>([]);
   const [selectedScenario, setSelectedScenario] = useState("Calm Waters");
   const [selectedRegion, setSelectedRegion] = useState<Region>("North Sea");
-  const [selectedSeason, setSelectedSeason] = useState<Season>("Summer")
+  const [selectedSeason, setSelectedSeason] = useState<Season>("Summer");
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -36,7 +36,7 @@ export default function Dashboard() {
   return (
     <>
       <h1>Dashboard Simulator</h1>
-      
+
       <ScenarioSelector
         selectedScenario={selectedScenario}
         onChange={setSelectedScenario}
@@ -47,29 +47,30 @@ export default function Dashboard() {
         <select
           value={selectedRegion}
           onChange={(e) => setSelectedRegion(e.target.value as Region)}
-          >
+        >
           {regions.map((r) => (
             <option key={r} value={r}>
               {r}
-              </option>
-            ))}
+            </option>
+          ))}
         </select>
       </label>
 
-      <label style={{ marginLeft:"1rem" }}>
-        Seaons
+      <label style={{ marginLeft: "1rem" }}>
+        Seasons
         <select
           value={selectedSeason}
-        onChange={(e) => setSelectedSeason(e.target.value as Season)}
+          onChange={(e) => setSelectedSeason(e.target.value as Season)}
         >
-        {Season.map((s) => (
-          <option key={s} value={s}>
-            {s}
-          </option>
-      ))}
+          {seasons.map((s) => (
+            <option key={s} value={s}>
+              {s}
+            </option>
+          ))}
         </select>
       </label>
-      <SensorChart data={data />
+
+      <SensorChart data={data} />
     </>
   );
 }
