@@ -2,7 +2,7 @@
 
 let lastTemperature = 20; // startwaarde watertemperatuur
 
-export function generateData(scenario: string) {
+export function generateData(scenario: string, region:string, season:string) {
   // kleine verandering per update: tussen -0.1 en +0.1 graden
   let change = (Math.random() - 0.5) * 0.2;
 
