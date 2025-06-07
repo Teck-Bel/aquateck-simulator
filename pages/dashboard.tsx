@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import SensorChart from "../components/SensorChart";
 import ScenarioSelector from "../components/ScenarioSelector";
-import RegionSelector from "../componets/RegionSelector";
+import RegionSelector from "../components/RegionSelector";
+import SeasonSelector from "../components/SeasonSelector";
 import { generateData } from "../utils/simulationEngine";
 
 const regions = ["North Sea", "Mediterranean Sea", "Tropical Sea"] as const;
