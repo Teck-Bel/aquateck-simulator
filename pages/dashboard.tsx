@@ -49,7 +49,7 @@ export default function Dashboard() {
           onChange={(e) => setSelectedRegion(e.target.value as Region)}
           >
           {regions.map((r) => (
-            <option key{r} value{r}>
+            <option key={r} value={r}>
               {r}
               </option>
             ))}
