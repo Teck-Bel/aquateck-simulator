@@ -61,9 +61,28 @@ export default function Dashboard() {
         data={data}
         xAxisLabel="Time (hh:mm:ss)"
         yAxisLabel="Temperature"
-        windSpeed={windSpeed}
-        windDirection={windDirection}
       />
+
+      <div style={{
+  display: "flex",
+  gap: "2rem",
+  marginTop: "2rem",
+  padding: "1rem",
+  backgroundColor: "#f9f9f9",
+  border: "1px solid #ddd",
+  borderRadius: "8px",
+  maxWidth: "400px"
+}}>
+  <div>
+    <strong>Wind Speed:</strong>
+    <div>{windSpeed} km/h</div>
+  </div>
+  <div>
+    <strong>Wind Direction:</strong>
+    <div>{windDirection}</div>
+  </div>
+</div>
+
     </>
   );
 }
