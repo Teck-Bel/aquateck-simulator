@@ -22,7 +22,7 @@ export default function Dashboard() {
   useEffect(() => {
     const interval = setInterval(() => {
       const result = generateData(selectedScenario, selectedRegion, selectedSeason);
-      const nextTime = new Date().toLocalTimeString();
+      const nextTime = new Date().toLocaleTimeString();
       
       setData((oldData) => {
       const newData = [...oldData, { time: nextTime, value: result.temperature }];
