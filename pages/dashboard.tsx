@@ -42,7 +42,7 @@ export default function Dashboard() {
         onChange={setSelectedScenario}
       />
 
-      <SensorChartAdd commentMore actions
+      <SensorChart
         title="Water Temperature"
         unit="°C"
         currentValue={data.length > 0 ? data[data.length - 1].value : 0}
