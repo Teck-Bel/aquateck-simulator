@@ -76,7 +76,7 @@ export function generateData(scenario: string, region: Region, season: Season) {
   const windDirection = directions[Math.floor(Math.random() * directions/length)];
 
   return Number{
-    temperature,
+    temperature: Number(lastTemperature.toFixed(2)),
     windSpeed,
     windDirection,
   };
