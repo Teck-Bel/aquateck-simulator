@@ -69,14 +69,14 @@ export function generateData(scenario: string, region: Region, season: Season) {
 
   // windsensor waarde
   const windSpeed = scenario == "Storm"
-  ? Math.floor(Math.random() * 50) + 30 // 30 - 80 km/h bij storm
-  : math.floor(math.random() * 20) +5; // 5 -25 km/h anders
+    ? Math.floor(Math.random() * 50) + 30 // 30 - 80 km/h bij storm
+    : Math.floor(Math.random() * 20) +5; // 5 -25 km/h anders
 
   const directions = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"];
   const windDirection = directions[Math.floor(Math.random() * directions/length)];
 
   return Number{
-    temperature: Number(lastTemperature.toFixed(2)),
+    temperature,
     windSpeed,
     windDirection,
   };
