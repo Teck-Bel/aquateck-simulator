@@ -1,7 +1,7 @@
 // simulationEngine.ts
 
-type Region = "Noordzee" | "Middellandse Zee" | "Tropisch";
-type Season = "Lente" | "Zomer" | "Herfst" | "Winter";
+type Region = "North Sea" | "Mediterranean Sea " | "Tropical Sea";
+type Season = "Spring" | "Summer" | "Autumn" | "Winter";
 
 interface TempLimits {
   min: number;
