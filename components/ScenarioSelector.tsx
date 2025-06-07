@@ -5,15 +5,24 @@ export type ScenarioSelectorProps = {
   onChange: React.Dispatch<React.SetStateAction<string>>;
 };
 
+const scenarios = [
+  { id: "storm", label: "Storm" },
+  { id: "calm", label: "Calm Waters" },
+  { id: "heavyRain", label: "Heavy Rain" },
+  { id: "fog", label: "Foggy" }
+];
+
 export default function ScenarioSelector({ selectedScenario, onChange }: ScenarioSelectorProps) {
   return (
     <select
       value={selectedScenario}
       onChange={(e) => onChange(e.target.value)}
     >
-      <option value="scenario1">Scenario 1</option>
-      <option value="scenario2">Scenario 2</option>
-      {/* Voeg meer scenario's toe */}
+      {scenarios.map((scenario) => (
+        <option key={scenario.id} value={scenario.id}>
+          {scenario.label}
+        </option>
+      ))}
     </select>
   );
 }
