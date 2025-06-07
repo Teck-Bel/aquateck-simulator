@@ -17,6 +17,8 @@ type SensorChartProps = {
   currentValue: number;
   xAxisLabel: string;
   yAxisLabel: string;
+  windSpeed?: number;
+  windDirection?: string;
 };
 
 export default function SensorChart({
@@ -26,25 +28,36 @@ export default function SensorChart({
   currentValue,
   xAxisLabel,
   yAxisLabel,
+  windSpeed,
+  windDirection,
 }: SensorChartProps) {
   return (
     <div style={{ width: "100%", marginBottom: "2rem" }}>
-      <div style={{ display: "flex", alignItems: "center", marginBottom: "0.5rem" }}>
-        <h3 style={{ marginRight: "1rem" }}>{title}</h3>
-        <div
-          style={{
-            padding: "0.3rem 0.7rem",
-            border: "1px solid #ccc",
-            borderRadius: "4px",
-            minWidth: "80px",
-            textAlign: "center",
-            fontWeight: "bold",
-            backgroundColor: "#f0f0f0"
-          }}
-        >
-          {currentValue} {unit}
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "0.5rem" }}>
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <h3 style={{ marginRight: "1rem" }}>{title}</h3>
+          <div
+            style={{
+              padding: "0.3rem 0.7rem",
+              border: "1px solid #ccc",
+              borderRadius: "4px",
+              minWidth: "80px",
+              textAlign: "center",
+              fontWeight: "bold",
+              backgroundColor: "#f0f0f0"
+            }}
+          >
+            {currentValue} {unit}
+          </div>
         </div>
+
+        {windSpeed !== undefined && windDirection && (
+          <div style={{ fontSize: "0.9rem", color: "#555" }}>
+            Wind: {windSpeed} km/h ({windDirection})
+          </div>
+        )}
       </div>
+
       <ResponsiveContainer width="100%" height={300}>
         <LineChart data={data} margin={{ top: 10, right: 30, left: 0, bottom: 40 }}>
           <CartesianGrid strokeDasharray="3 3" />
@@ -63,3 +76,4 @@ export default function SensorChart({
     </div>
   );
 }
+
