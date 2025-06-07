@@ -1,28 +1,24 @@
-import React, { useState, useEffect } from "react";
-import ScenarioSelector from "../components/ScenarioSelector";
+import { useEffect, useState } from "react";
 import SensorChart from "../components/SensorChart";
+import ScenarioSelector from "../components/ScenarioSelector";
+import { generateData } from "../utils/simulationEngine";
 
 export default function Dashboard() {
-  const [selectedScenario, setSelectedScenario] = useState("Calm Waters");
   const [data, setData] = useState<{ time: string; value: number }[]>([]);
+  const [selectedScenario, setSelectedScenario] = useState("Calm Waters");
 
-  // Simuleer data afhankelijk van het gekozen scenario
   useEffect(() => {
     const interval = setInterval(() => {
       setData((oldData) => {
-        const nextValue =
-          selectedScenario === "Calm Waters"
-            ? Math.random() * 10 + 20
-            : selectedScenario === "Storm"
-            ? Math.random() * 30 + 10
-            : Math.random() * 5 + 5;
-
+        const nextValue = generateData(selectedScenario);
         const nextTime = new Date().toLocaleTimeString();
+        const newData = [...oldData, { time: nextTime, value: nextValue }];
 
-        const newData = [...oldData, { time: nextTime, value: Number(nextValue.toFixed(2)) }];
-
-        // Houd max 20 punten vast
-        return newData.length > 20 ? newData.slice(newData.length - 20) : newData;
+        // Houd alleen de laatste 20 meetwaarden
+        if (newData.length > 20) {
+          newData.shift();
+        }
+        return newData;
       });
     }, 1000);
 
@@ -31,8 +27,11 @@ export default function Dashboard() {
 
   return (
     <>
-      <h1>Dashboard AquaTeck Simulator</h1>
-      <ScenarioSelector selected={selectedScenario} onChange={setSelectedScenario} />
+      <h1>Dashboard Simulator</h1>
+      <ScenarioSelector
+        selectedScenario={selectedScenario}
+        onChange={setSelectedScenario}
+      />
       <SensorChart data={data} />
     </>
   );
