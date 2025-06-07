@@ -32,7 +32,14 @@ export default function Dashboard() {
         selectedScenario={selectedScenario}
         onChange={setSelectedScenario}
       />
-      <SensorChart data={data} />
+      <SensorChart
+  title="Water Temperature"
+  unit="°C"
+  currentValue={data.length > 0 ? data[data.length - 1].value : 0}
+  data={data}
+  xAxisLabel="Time (hh:mm:ss)"
+  yAxisLabel="Temperature"
+/>
     </>
   );
 }
