@@ -60,7 +60,7 @@ export default function Dashboard() {
         Seaons
         <select
           value={selectedSeason}
-        onChange={(e) => setSelectedSeasons(e.target.value as Season)}
+        onChange={(e) => setSelectedSeason(e.target.value as Season)}
         >
         {Season.map((s) => (
           <option key={s} value={s}>
