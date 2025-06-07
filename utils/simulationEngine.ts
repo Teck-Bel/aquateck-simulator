@@ -1,14 +1,23 @@
+// simulationEngine.ts
+
+let lastTemperature = 20; // startwaarde watertemperatuur
+
 export function generateData(scenario: string) {
-  let value;
+  // kleine verandering per update: tussen -0.1 en +0.1 graden
+  let change = (Math.random() - 0.5) * 0.2;
+
   switch (scenario) {
     case "Calm Waters":
-      value = Math.random() * 10 + 20;
+      lastTemperature = Math.min(24, Math.max(18, lastTemperature + change));
       break;
+
     case "Storm":
-      value = Math.random() * 30 + 10;
+      lastTemperature = Math.min(22, Math.max(15, lastTemperature + change));
       break;
+
     default:
-      value = Math.random() * 5 + 5;
+      lastTemperature = Math.min(20, Math.max(16, lastTemperature + change));
   }
-  return Number(value.toFixed(2));
+
+  return Number(lastTemperature.toFixed(2));
 }
