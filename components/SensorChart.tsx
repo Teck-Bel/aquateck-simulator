@@ -6,7 +6,7 @@ import {
   XAxis,
   YAxis,
   Tooltip,
-  ResponciveContainer,
+  ResponsiveContainer,
   Label
 } from "recharts";
 
