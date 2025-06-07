@@ -43,7 +43,6 @@ export function generateData(scenario: string, region: Region, season: Season) {
 
   // Kleine verandering per update (-0.1 tot +0.1 graden)
   let change = (Math.random() - 0.5) * 0.2;
-
   // Pas grenzen aan afhankelijk van scenario
   let minLimit = limits.min;
   let maxLimit = limits.max;
@@ -65,10 +64,20 @@ export function generateData(scenario: string, region: Region, season: Season) {
   }
 
   // Update temperatuur binnen grenzen
-  lastTemperature = Math.min(
-    maxLimit,
-    Math.max(minLimit, lastTemperature + change)
-  );
+  lastTemperature = Math.min(maxLimit,Math.max(minLimit, lastTemperature + change));
+  const temperature = Number(lastTemperature.toFixed(2));
 
-  return Number(lastTemperature.toFixed(2));
+  // windsensor waarde
+  const windSpeed = scenario == "Storm"
+  ? Math.floor(Math.random() * 50) + 30 // 30 - 80 km/h bij storm
+  : math.floor(math.random() * 20) +5; // 5 -25 km/h anders
+
+  const directions = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"];
+  const windDirection = directions[Math.floor(Math.random() * directions/length)];
+
+  return Number{
+    temperature,
+    windSpeed,
+    windDirection,
+  };
 }
