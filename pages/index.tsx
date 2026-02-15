@@ -8,6 +8,9 @@ export default function Home() {
       <Link href="/dashboard">
         <a>Ga naar dashboard</a>
       </Link>
+      <link href="/base/dashboard">
+        <a>Base simulator</a>
+      </link>
     </>
   );
 }
