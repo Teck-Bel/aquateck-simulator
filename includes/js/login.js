@@ -1,6 +1,6 @@
-Console.log("login.js geladen");
+console.log("login.js geladen");
 
-import { auth } from "/aquateck-simulator/includes/firebase/condig.js";
+import { auth } from "/aquateck-simulator/includes/firebase/config.js";
 import { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
 window.addEventListener("DOMContentLoaded", () => {
