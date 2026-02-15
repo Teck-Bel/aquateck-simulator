@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Login AquaTeck sim</title>
+    <link rel="stylesheet" href="/aquateck-simulator/css/style.css"/>
+    <link rel="icon" type="image/png" href="/aquateck-simulator/imgs/auquateck.png"/>
+  </head>
+  <body>
+    <form id="loginForm" methode="post" action="#">
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="Email address"
+        autocomplete="email"
+        required
+        />
+      <br><br>
+
+      <input
+        type="password"
+        id="password"
+        name="password"
+        placeholder="Password"
+        autocomplete="current-password"
+        required
+        />
+      <br><br>
+
+      <button type="submit">Login</button>
+    </form>
+
+    <p id="error" style="color:red;"></p>
+
+    <script type="module" src="/aquateck-simiulator/inlcudes/js/login.js"></script>
+  </body>
+</html>
