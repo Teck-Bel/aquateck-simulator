@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Dashboard AquaSim</title>
+    <link rel="stylesheet" href="/aquateck-simulator/css/style.css"/>
+    <link rel="icon" type="image/png" href="/aquateck-simulator/imgs/aquateck.png"/>
+  </head>
+  <body data-title="Dashboard">
+    <div id="header-placeholder"></div>
+    <p>Welcome on your dashboard.</p>
+    <br><br>
+    <p>Select the system that you want to simulate.</p>
+
+    <div class="sim-container">
+      
+      <div class="sim-card" id="sim-base" style="display:none;">
+        <h2>Base Simulator</h2>
+        <button onclick="openSim('sim/base.html')">Open</button>
+      </div>
+
+      <div class="sim-card" id="sim-pro" style="display:none;">
+        <h2>Pro Simulator</h2>
+        <button onclick="openSim('sim/pro.html')">Open</button>
+      </div>
+
+      <div class="sim-card" id="sim-fleetlink" style="display:none;">
+        <h2>Fleetlink Simulator</h2>
+        <button onclick="openSim('sim/fleetlink.html')">Open</button>
+      </div>
+
+      <div class="sim-card" id="sim-portguard" style="display:none;">
+        <h2>Port Guard Simulator</h2>
+        <button onclick="openSim('sim/portguard.html')">Open</button>
+      </div>
+
+      <div class="sim-card" id="sim-fleetcommand" style="display:none;">
+        <h2>Fleet Command Simulator</h2>
+        <button onclick="openSim('sim/fleetcommand.html')">Open</button>
+      </div>
+    </div>
+
+    <script type="module" src="/aquateck-simulator/includes/js/dashboard.js"></script>
+  </body>
+</html>
