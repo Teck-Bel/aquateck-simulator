@@ -17,7 +17,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      window.location.href = "/teck-staff/dashboard.html";
+      window.location.href = "/aquateck-simulator/dashboard.html";
     } catch (err) {
       errorE1.textContent = "Ongeldige inloggegevens";
       console.error(err.code);
