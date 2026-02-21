@@ -1,6 +1,6 @@
 console.log("dashboard.js geladen");
 
-import { auth } from "/aquateck-simulator/includes/firebase/config.js";
+import { auth, db } from "/aquateck-simulator/includes/firebase/config.js";
 import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 import { doc, getDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
@@ -46,7 +46,7 @@ onAuthStateChanged(auth, async (user) => {
 });
 
 logoutBtn.addEventListener("click", async () => {
-  await singOut(auth);
+  await signOut(auth);
   window.location.href = ("/aquateck-simulator/login.html");
 });
 
