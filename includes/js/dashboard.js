@@ -1,6 +1,6 @@
 Console.log("dashboard.js geladen");
 
-import { auth } from "/aquateck-simulator/includes/firebase/condig.js";
+import { auth } from "/aquateck-simulator/includes/firebase/config.js";
 import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 import { doc, getDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
