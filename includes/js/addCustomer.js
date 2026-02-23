@@ -12,16 +12,16 @@ document.addEventListener("DOMContentLoaded", () => {
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    const naam = document.getElementById("naam").value;
+    const name = document.getElementById("name").value;
     const email = document.getElementById("email").value;
-    const bedrijf = document.getElementById("bedrijf").value;
+    const company = document.getElementById("company").value;
     const simulator = document.getElementById("simulator").value;
 
     try {
       await addDoc(collection(db, "customers"), {
-        naam,
+        name,
         email,
-        bedrijf,
+        company,
         simulator,
         aangemaaktOp: serverTimestamp()
       });
