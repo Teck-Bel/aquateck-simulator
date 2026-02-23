@@ -63,6 +63,14 @@ onAuthStateChanged(auth, async (user) => {
   else {
     console.log("Fleet Command simulator not allowed");
   }
+
+  if (role.include("admin")){
+    document.getElementById("admin-addUser");
+    console.log("Add user allowed");
+  }
+  else {
+    console.log("Add user not allowed");
+  }
 });
 
 logoutBtn.addEventListener("click", async () => {
