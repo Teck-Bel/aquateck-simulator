@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!form) return;
 
   const actionCodeSettings = {
-    url: "https://teck-bel.github.io/aquateck-simulator/finishSignUp.html",
+    url: "https://teck-bel.github.io/aquateck-simulator/admin/finishSignUp.html",
     handleCodeInApp: true
   };
 
