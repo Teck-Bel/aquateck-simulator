@@ -26,22 +26,27 @@ onAuthStateChanged(auth, async (user) => {
 
   if (simulators.includes("base")) {
     document.getElementById("sim-base").style.display = "block";
+    console.log("Base simulator allowed");
   }
   
   if (simulators.includes("pro")) {
     document.getElementById("sim-pro").style.display = "block";
+    console.log("Pro simulator allowed");
   }
   
   if (simulators.includes("fleetlink")) {
     document.getElementById("sim-fleetlink").style.display = "block";
+    console.log("Fleetlink simulator allowed");
   }
   
   if (simulators.includes("portguard")) {
     document.getElementById("sim-portguard").style.display = "block";
+    console.log("Port Guard simulator allowed");
   }
   
   if (simulators.includes("fleetcommand")) {
     document.getElementById("sim-fleetcommand").style.display = "block";
+    console.log("Fleet Command simulator allowed");
   }
 });
 
