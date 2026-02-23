@@ -27,7 +27,7 @@ if (isSignInWithEmailLink(auth, window.location.href)) {
 
       // 🔹 Redirect naar dashboard of simulator
       setTimeout(() => {
-        window.location.href = "dashboard.html";
+        window.location.href = "/aquateck-simulator/dashboard.html";
       }, 1500);
 
     })
