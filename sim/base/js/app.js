@@ -65,8 +65,8 @@ function generateData() {
   return {
     locatie: "Simulatie actief",
     snelheid: currentSpeed.toFixed(1),
-    lat: currentLat,
-    lng: currentLng,
+    lat: 51.23120712133122,
+    lng: 4.393429787066567,
     kanaal
   };
 }
