@@ -9,8 +9,15 @@ const defaultLatLng = [51.2194, 4.4025]; // Antwerpen
 
 const map = L.map("map").setView(defaultLatLng, 13);
 
+// Basiskaart (licht)
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
   maxZoom: 19
+}).addTo(map);
+
+// 🌊 Maritieme overlay
+L.tileLayer("https://tiles.openseamap.org/seamark/{z}/{x}/{y}.png", {
+  maxZoom: 19,
+  attribution: "© OpenSeaMap"
 }).addTo(map);
 
 const marker = L.marker(defaultLatLng).addTo(map);
