@@ -2,30 +2,46 @@
 <html lang="nl">
   <head>
     <meta charset="UTF-8">
-    <title>AquaTeck Base – Dashboard</title>
-    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <link rel="stylesheet" href="/aquateck-simulator/css/dashboard.css"/>
-    <link rel="icon" type="image/png" href="/aquateck-simulator/imgs/aquateck.png"/>
+    <title>AquaTeck Base Simulator</title>
+  
+    <link rel="stylesheet" href="style.css">
+  
+    <!-- Leaflet -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   </head>
-  <body onload="loadDashboard()">
   
-    <header>
-      <h1>AquaTeck Base – Dashboard</h1>
-      <button onclick="logout()">Afmelden</button>
-    </header>
+  <body>
   
-    <div class="grid">
-      <div class="card">📍 Locatie: <span id="location"></span></div>
-      <div class="card">🚤 GPS Snelheid: <span id="gpsSpeed"></span> kn</div>
-      <!-- <div class="card">⚓ Logsnelheid: <span id="logSpeed"></span> kn</div> --><!-- enkel voor PRO-->
-      <!-- <div class="card">🔋 Batterij: <span id="battery"></span></div> --><!-- enkel voor PRO-->
-      <!-- <div class="card">🔌 Lader: <span id="charger"></span></div> --><!-- enkel voor PRO-->
-      <div class="card">📻 VHF Kanaal: <span id="vhf"></span></div>
+    <h1>AquaTeck Base Simulator</h1>
+  
+    <!-- 🎮 CONTROLS -->
+    <div class="controls">
+      <label>Seizoen:</label>
+      <select id="season">
+        <option value="zomer">Zomer</option>
+        <option value="winter">Winter</option>
+      </select>
+  
+      <label>Weer:</label>
+      <select id="weather">
+        <option value="calm">Kalm</option>
+        <option value="wind">Wind</option>
+        <option value="storm">Storm</option>
+      </select>
     </div>
   
-    <script type="module" src="/aquateck-simulator/includes/base/app.js"></script>
+    <!-- 📊 DATA -->
+    <div class="grid">
+      <div>📍 Locatie: <span id="location"></span></div>
+      <div>🚤 Snelheid: <span id="speed"></span> kn</div>
+      <div>📻 VHF: <span id="vhf"></span></div>
+    </div>
+  
+    <!-- 🗺️ KAART -->
+    <div id="map"></div>
+  
+    <script src="app.js"></script>
+  
   </body>
 </html>
