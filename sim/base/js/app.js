@@ -92,10 +92,10 @@ setInterval(() => {
   marker.setLatLng(latlng);
 
   // 🔥 ROTATIE (HEEL BELANGRIJK)
-  const el = marker.getElement();
-  if (el) {
-    el.style.transform = `rotate(${data.heading}deg)`;
-  }
+ const el = marker.getElement();
+if (el) {
+  el.style.transform = `translate(-50%, -50%) rotate(${data.heading}deg)`;
+}
 
 }, 1000);
 
