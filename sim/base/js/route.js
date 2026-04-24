@@ -43,5 +43,5 @@ export function moveAlongRoute(currentLat, currentLng, speed = 0.02) {
   const newLat = currentLat + dx * speed;
   const newLng = currentLng + dy * speed;
 
-  return { lat: newLat, lng: NewLng };
+  return { lat: newLat, lng: newLng };
 }
