@@ -19,20 +19,20 @@ export const route = [
 let routeIndex = 0;
 
 // route logic
-export function moveAlongRoute(cuurentLat, currentLng, speed = 0.02) {
+export function moveAlongRoute(currentLat, currentLng, speed = 0.02) {
   const target = route[routeIndex];
 
   const dx = target[0] - currentLat;
   const dy = target[1] - currentLng;
 
-  const distance = Math.sqrt(dx * dx + dy *dy);
+  const distance = Math.sqrt(dx * dx + dy * dy);
 
   // als dicht genoeg bij punt zijn --> volgend punt
   if (distance < 0.0003) {
     routeIndex++;
 
     //opnieuw beginnen (loop)
-    if (routeIndex >= route/length) {
+    if (routeIndex >= route.length) {
       routeIndex = 0;
     }
 
@@ -43,5 +43,5 @@ export function moveAlongRoute(cuurentLat, currentLng, speed = 0.02) {
   const newLat = currentLat + dx * speed;
   const newLng = currentLng + dy * speed;
 
-  return { lat: currentLat, lng: currentLng };
+  return { lat: newLat, lng: NewLng };
 }
