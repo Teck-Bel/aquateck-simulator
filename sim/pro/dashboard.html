@@ -11,19 +11,40 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   </head>
   <body onload="loadDashboard()">
+
+    <h1>AquaTeck Pro Simulator</h1>
   
-    <header>
-      <h1>AquaTeck Pro – Dashboard</h1>
-      <button onclick="logout()">Afmelden</button>
-    </header>
+    <!-- 🎮 CONTROLS -->
+    <div class="controls">
+      <label>Seizoen:</label>
+      <select id="season">
+        <option value="zomer">Zomer</option>
+        <option value="winter">Winter</option>
+      </select>
+  
+      <label>Weer:</label>
+      <select id="weather">
+        <option value="calm">Kalm</option>
+        <option value="wind">Wind</option>
+        <option value="storm">Storm</option>
+      </select>
+
+      <label>Charger:</label>
+      <select id="season">
+        <option value="on">on</option>
+        <option value="off">off</option>
+      </select>
+
+      <button onclick="window.location.href='index.html'">Home</button>
+    </div>
   
     <div class="grid">
-      <div class="card">📍 Locatie: <span id="location"></span></div>
-      <div class="card">🚤 GPS Snelheid: <span id="gpsSpeed"></span> kn</div>
-      <div class="card">⚓ Logsnelheid: <span id="logSpeed"></span> kn</div>
-      <div class="card">🔋 Batterij: <span id="battery"></span></div>
-      <div class="card">🔌 Lader: <span id="charger"></span></div>
-      <div class="card">📻 VHF Kanaal: <span id="vhf"></span></div>
+      <div class="card">📍 Location: <span id="location"></span></div>
+      <div class="card">🚤 GPS Speed: <span id="gpsSpeed"></span> kn</div>
+      <div class="card">⚓ Log speed: <span id="logSpeed"></span> kn</div>
+      <div class="card">🔋 Battery: <span id="battery"></span></div>
+      <div class="card">🔌 Charger: <span id="charger"></span></div>
+      <div class="card">📻 VHF Channel: <span id="vhf"></span></div>
     </div>
   
     <script type="module" src="/aquateck-simulator/includes/base/app.js"></script>
